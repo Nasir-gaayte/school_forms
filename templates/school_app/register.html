@@ -1,0 +1,13 @@
+{% extends "school_app/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        {{a_form.as_p|crispy}}
+        {{b_from.as_p|crispy}}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+{% endblock  %}
