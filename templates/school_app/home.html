@@ -1,5 +1,14 @@
 {% extends "school_app/base.html" %}
 {% load static %}
 {% block content %}
-  <h1>home</h1>
+<div class="contaicer jumbotron">
+    <h1>home</h1>
+    <ul>
+      {% csrf_token %}
+      {% if school in school_list%}
+       <li>{{school.name}}</li>
+      {% endif %}
+    </ul>
+    
+  </div>
 {% endblock  %}
